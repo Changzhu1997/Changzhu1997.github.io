@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
 </head>
 <body>
-    <div id="mapid" style="height: 500px;"></div>
+    <div id="mapid" style="height: 1000px;"></div>
 
     <script>
         var mymap = L.map('mapid').setView([35.8617, 104.1954], 4);
@@ -22,6 +22,19 @@
             .bindPopup("<b>上海</b><br />").openPopup();
         L.marker([23.1291, 113.2644]).addTo(mymap)
             .bindPopup("<b>广州</b><br />").openPopup();
+        L.marker([34.8107, 117.3220]).addTo(mymap)
+            .bindPopup("<b>枣庄</b><br />").openPopup();
+        L.marker([30.5928, 114.3052]).addTo(mymap)
+            .bindPopup("<b>武汉</b><br />").openPopup();
+        L.marker([32.0090, 112.1226]).addTo(mymap)
+            .bindPopup("<b>襄阳</b><br />").openPopup();
+        L.marker([36.6256, 114.5392]).addTo(mymap)
+            .bindPopup("<b>邯郸</b><br />").openPopup();
+        L.marker([38.3044, 116.8387]).addTo(mymap)
+            .bindPopup("<b>沧州</b><br />").openPopup();
+        L.marker([31.8206, 117.2290]).addTo(mymap)
+            .bindPopup("<b>合肥</b><br />").openPopup();
+        
     </script>
 </body>
 </html>
