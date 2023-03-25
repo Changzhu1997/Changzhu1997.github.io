@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>China Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+</head>
+<body>
+    <div id="mapid" style="height: 500px;"></div>
+
+    <script>
+        var mymap = L.map('mapid').setView([35.8617, 104.1954], 4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        L.marker([39.9042, 116.4074]).addTo(mymap)
+            .bindPopup("<b>北京</b><br />").openPopup();
+        L.marker([31.2304, 121.4737]).addTo(mymap)
+            .bindPopup("<b>上海</b><br />").openPopup();
+        L.marker([23.1291, 113.2644]).addTo(mymap)
+            .bindPopup("<b>广州</b><br />").openPopup();
+    </script>
+</body>
+</html>
