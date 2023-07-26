@@ -43,7 +43,8 @@
   shadowSize: [41, 41]
 });
 	var markerCount = 0;
-
+	const myElement = document.getElementById('marker');
+	    
   	function addMarker(lat, lng, city, iconType) {
 	  if (iconType == null){
           	L.marker([lat, lng]).addTo(mymap).bindPopup(city);
@@ -52,7 +53,6 @@
 	  	L.marker([lat, lng], {icon: iconType}).addTo(mymap).bindPopup(city);
  	  }
           markerCount++;
-	  const myElement = document.getElementById('marker');
 	  myElement.textContent = `Number of Markers: ${markerCount}`;
         }   
 
