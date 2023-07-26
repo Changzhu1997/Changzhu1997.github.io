@@ -31,9 +31,24 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         }).addTo(mymap);
+        
+        // Initialize marker count
+        let markerCount = 0;
 
-        L.marker([39.9042, 116.4074]).addTo(mymap)
-            .bindPopup("<b>北京</b><br />");
+        // Function to add a marker and update the count
+        function addMarker(lat, lng, city) {
+          L.marker([lat, lng]).addTo(map).bindPopup(city);
+          markerCount++;
+          updateMarkerCount();
+        }    
+        
+        // Function to update the marker count display
+        function updateMarkerCount() {
+          const countElement = document.getElementById('marker-count');
+          countElement.textContent = markerCount;
+        }
+
+        addMarker(39.9042, 116.4074,"北京")
         L.marker([31.2304, 121.4737]).addTo(mymap)
             .bindPopup("<b>上海</b><br />");
         L.marker([23.1291, 113.2644]).addTo(mymap)
