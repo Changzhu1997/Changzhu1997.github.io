@@ -44,11 +44,16 @@
 });
 	var markerCount = 0;
 
-  	function addMarker(lat, lng, city) {
-          L.marker([lat, lng]).addTo(mymap).bindPopup(city);
+  	function addMarker(lat, lng, city, iconType) {
+	  if (iconType == null){
+          	L.marker([lat, lng]).addTo(mymap).bindPopup(city);
+	  }
+	  else{
+	  	L.marker([lat, lng], {icon: iconType}).addTo(mymap).bindPopup(city);
+ 	  }
           markerCount++;
 	  const myElement = document.getElementById('marker');
-	  myElement.textContent = `Number of Toys: ${markerCount}`;
+	  myElement.textContent = `Number of Markers: ${markerCount}`;
         }   
 
 
@@ -61,7 +66,9 @@
 	addMarker(39.9042, 116.4074, "<b>北京</b><br />")
 	addMarker(31.2304, 121.4737, "<b>上海</b><br />")
         addMarker(23.1291, 113.2644, "<b>广州</b><br />")
-      
+	addMarker(26.0742, 119.2965, "<b>福州</b><br />", goldIcon)
+
+        
         L.marker([34.8107, 117.3220]).addTo(mymap)
             .bindPopup("<b>枣庄</b><br />");
         L.marker([30.5928, 114.3052]).addTo(mymap)
@@ -76,8 +83,7 @@
             .bindPopup("<b>成都</b><br />");
         L.marker([30.5723, 104.0665]).addTo(mymap)
             .bindPopup("<b>成都</b><br />");
-        L.marker([26.0742, 119.2965], {icon: goldIcon}).addTo(mymap)
-            .bindPopup("<b>福州</b><br />");
+       
         L.marker([36.1958, 113.1165]).addTo(mymap)
             .bindPopup("<b>长治</b><br />");
         L.marker([34.7472, 113.6249]).addTo(mymap)
